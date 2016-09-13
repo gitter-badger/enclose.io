@@ -1,24 +1,11 @@
-# README
+# Enclose.IO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Enclose.IO 
+is a cloud-based service that creates a single executable out of your node.js application
+for Windows, Linux and Mac OS X. It freezes your app code with the Node.js interpreter and all module dependencies,
+making your app ready to be used out-of-the-box.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Build Status](https://travis-ci.org/pmq20/enclose.io.svg)](https://travis-ci.org/pmq20/enclose.io)
+[![Code Climate](https://codeclimate.com/github/pmq20/enclose.io/badges/gpa.svg)](https://codeclimate.com/github/pmq20/enclose.io)
+[![codecov.io](https://codecov.io/github/pmq20/enclose.io/coverage.svg?branch=master)](https://codecov.io/github/pmq20/enclose.io?branch=master)
