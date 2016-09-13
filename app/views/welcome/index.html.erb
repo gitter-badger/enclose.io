@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <h1 class="display-4" style="margin-bottom: 20px">Node.js Packaging Service</h1>
+  <p class="lead">Enclose.IO 
+    is a cloud-based service that creates a single executable out of your node.js application
+    for Windows, Linux and Mac OS X. It freezes your app code with the Node.js interpreter and all module dependencies,
+    making your app ready to be used out-of-the-box.
+  </p>
+  <% if user_signed_in? %>
+    <p><a class="btn btn-lg btn-primary" href="<%= new_project_path %>" role="button">Create a Project</a></p>
+  <% else %>
+    <p><a class="btn btn-lg btn-primary" href="<%= user_github_omniauth_authorize_path %>" role="button" data-turbolinks="false">Sign in with GitHub</a></p>
+  <% end %>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>Multiversion</h4>
+    <p>Supports both Node.js LTS releases and Current Latest releases.</p>
+
+    <h4>Isolated</h4>
+    <p>Makes your apps run in isolated environments, bringing the ability to run multiple applications with different node.js runtimes.</p>
+
+    <h4>Lockdown</h4>
+    <p>Confines specific application versions, dependencies versions and Node.js versions into one single box.</p>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Multiplatform</h4>
+    <p>Generates Windows (32-bit and 64-bit), Linux and Mac OS X executables simultaneously.</p>
+
+    <h4>Portable</h4>
+    <p>Packs Node.js apps into standard executables that work on computers without Node.js or npm installed.</p>
+
+    <h4>Faster</h4>
+    <p>No need to download hundreds of files via npm install to deploy your application. Deploy it as a single independent file.</p>
+  </div>
+</div>

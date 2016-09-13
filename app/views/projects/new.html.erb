@@ -1,0 +1,43 @@
+<h4>Create a Project</h4>
+
+<p>Please select the source of your project.</p>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link <%= 'active' if @project.github? %>" data-toggle="tab" href="#github" role="tab">GitHub</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= 'active' if @project.npm? %>" data-toggle="tab" href="#npm" role="tab">npm</a>
+  </li>
+</ul>
+
+<div class="tab-content" style="margin: 20px 0 40px 0">
+  <div class="tab-pane <%= 'active' if @project.github? %>" id="github" role="tabpanel">
+    <div class="row">
+      <div class="col-sm-8">
+        <p>Please enter the identifier of your GitHub repository, e.g. jashkenas/coffeescript, which corresponds to <a href="https://github.com/jashkenas/coffeescript">https://github.com/jashkenas/coffeescript</a>.</p>
+      </div>
+      <div class="col-sm-4">
+        <a href="https://github.com"><%= image_tag 'github.png', width: '210' %></a>
+      </div>
+    </div>
+    <%= simple_form_for @project, url: projects_path(source: :github) do |f| %>
+      <%= f.input :name, label: 'Repository', placeholder: 'jashkenas/coffeescript' %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+  <div class="tab-pane <%= 'active' if @project.npm? %>" id="npm" role="tabpanel">
+    <div class="row">
+      <div class="col-sm-8">
+        <p>Please enter a npm module name, e.g. coffee-script, which corresponds to <a href="https://www.npmjs.com/package/coffee-script">https://www.npmjs.com/package/coffee-script</a>.</p>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag 'npm.png', width: '210' %>
+      </div>
+    </div>
+    <%= simple_form_for @project, url: projects_path(source: :npm) do |f| %>
+      <%= f.input :name, label: 'Module', placeholder: 'coffee-script' %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

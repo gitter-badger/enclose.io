@@ -1,0 +1,21 @@
+/*
+ *= require tether
+ *= require bootstrap
+ *= require narrow-jumbotron
+ *= require font-awesome
+ *= require_self
+ */
+
+a.logo {
+  color: #818a91 !important;
+  &:hover {
+    text-decoration: none;
+  }
+  img {
+    margin-top: -14px;
+  }
+}
+
+.alert-global {
+  margin-bottom: 2rem;
+}

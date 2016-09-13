@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Enclose.IO is a cloud-based Node.js CLI packaging service">
+    <meta name="author" content="Minqi Pan">
+    <link rel="icon" href="/favicon.ico">
+
+    <title><%= '[DEV] ' if Rails.env.development? %>Enclose.io</title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-xs-right">
+            <li class="nav-item">
+              <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= packages_path %>">Packages</a>
+            </li>
+            <li class="nav-item nav-item-user">
+              <% if user_signed_in? %>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= current_user.name %>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="<%= projects_path %>">My Projects</a>
+                  <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="delete">Sign out</a>
+                </div>
+              </div>
+              <% else %>
+                <a class="btn btn-secondary" href="<%= user_github_omniauth_authorize_path %>" role="button" data-turbolinks="false">Sign in with GitHub</a>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><a href="/" class="logo"><%= image_tag 'logo.png', alt: 'Enclose.IO', height: 34 %></a></h3>
+      </div>
+
+      <% if notice.present? %>
+        <div class="alert alert-success alert-global" role="alert">
+          <%= raw notice %>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class="alert alert-danger alert-global" role="alert">
+          <%= raw alert %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+  </body>
+</html>
