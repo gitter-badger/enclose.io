@@ -1,5 +1,7 @@
 # Enclose.IO
 
+[![Join the chat at https://gitter.im/pmq20/enclose.io](https://badges.gitter.im/pmq20/enclose.io.svg)](https://gitter.im/pmq20/enclose.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Enclose.IO 
 is a cloud-based service that creates a single executable out of your node.js application
 for Windows, Linux and Mac OS X. It freezes your app code with the Node.js interpreter and all module dependencies,
